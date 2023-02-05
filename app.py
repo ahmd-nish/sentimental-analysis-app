@@ -31,7 +31,7 @@ def predict_sentiment(text):
 @app.route("/predict", methods=["POST"])
 def predict():
     # Get the text to be analyzed from the request
-    text = request.form.get("text")
+    text = request.json["text"]
     
     # Predict the sentiment of the text
     sentiment = predict_sentiment(text)
